@@ -1,0 +1,8 @@
+{
+    "clangd.fallbackFlags": [
+        "-I${workspaceFolder}/include",
+        "-DLIBHTMLE_SOURCE",
+        "-xc",
+        "-std=c89",
+    ]
+}
