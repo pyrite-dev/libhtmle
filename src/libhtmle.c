@@ -10,4 +10,4 @@ libhtmle_t* libhtmle_create(void) {
 	return r;
 }
 
-void libhtmle_destroy(libhtmle_t* engine) { free(m); }
+void libhtmle_destroy(libhtmle_t* engine) { free(engine); }
