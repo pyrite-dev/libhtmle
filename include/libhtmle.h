@@ -7,11 +7,19 @@
 #ifndef __LIBHTMLE_H__
 #define __LIBHTMLE_H__
 
-typedef struct libhtmle_state {
+#define libhtmle_t struct libhtmle
+#define libhtmle_state_t struct libhtmle_state
+#define libhtmle_callback_t struct libhtmle_callback
+
+struct libhtmle;
+struct libhtmle_state;
+struct libhtmle_callback;
+
+struct libhtmle_state {
 	char* buffer;
 	int   exclusive;
 	char  tagname[129];
-} libhtmle_state_t;
+};
 
 /* Callbacks */
 
@@ -31,20 +39,18 @@ enum LIBHTMLE_CALLBACK_EVENT {
 	LIBHTMLE_CONTENT_FORM, /* param: const char* form data (a=b&c=d&...) */
 };
 
-struct libhtmle_t;
-
-typedef struct libhtmle_callback {
+struct libhtmle_callback {
 	enum LIBHTMLE_CALLBACK_EVENT event;
-	libhmtle_t*		     engine;
+	libhtmle_t*		     engine;
 	void*			     param;
-} libhtmle_callback_t;
+};
 
-typedef struct libhtmle {
+struct libhtmle {
 	char*		    buffer;
 	libhtmle_callback_t callback;
 	libhtmle_state_t    state;
 	libhtmle_state_t    old;
-} libhtmle_t;
+};
 
 #define HTMLEDEF extern
 
