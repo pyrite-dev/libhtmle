@@ -12,8 +12,12 @@ typedef struct libhtmle_state {
 	char  exclusive;
 } libhtmle_state_t;
 
+typedef struct libhtmle_callback {
+} libhtmle_callback_t;
+
 typedef struct libhtmle {
 	char*		 buffer;
+	libhtmle_callback_t callback;
 	libhtmle_state_t state;
 	libhtmle_state_t old;
 } libhtmle_t;
