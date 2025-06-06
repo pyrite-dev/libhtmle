@@ -26,4 +26,8 @@ HTMLEDEF libhtmle_t* libhtmle_create(void);
  */
 HTMLEDEF void libhtmle_destroy(libhtmle_t* engine);
 
+#ifdef LIBHTMLE_SOURCE
+#include "libhtmle_internal.h"
+#endif
+
 #endif
