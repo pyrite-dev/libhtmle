@@ -1,0 +1,5 @@
+project("htmle")
+	kind("StaticLib")
+	targetdir("lib/%{cfg.buildcfg}/%{cfg.platform}")
+	files("src/*.c")
+	includedirs("include")
