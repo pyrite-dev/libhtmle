@@ -1,0 +1,4 @@
+-Iinclude
+-DLIBHTMLE_SOURCE
+-xc
+-std=c89
