@@ -51,7 +51,7 @@ int libhtmle_get_token(libhtmle_t* engine, char** token) {
 	memset(PTagName, 0, sizeof(PTagName));
 
 	if(r == TOKEN_TAG) {
-		for(i = 1; (*token)[i] != 0; i++) {
+		for(i = 1; (*token)[i] != 0 && i < (sizeof(PTagName) - 1); i++) {
 			char c = (*token)[i];
 			if(c == ' ' || c == '\t' || c == '\r' || c == '\n' || c == '>') {
 				break;
