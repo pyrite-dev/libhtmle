@@ -9,17 +9,18 @@
 
 typedef struct libhtmle_state {
 	char* buffer;
-	char  exclusive;
+	int   exclusive;
+	char  tagname[129];
 } libhtmle_state_t;
 
 typedef struct libhtmle_callback {
 } libhtmle_callback_t;
 
 typedef struct libhtmle {
-	char*		 buffer;
+	char*		    buffer;
 	libhtmle_callback_t callback;
-	libhtmle_state_t state;
-	libhtmle_state_t old;
+	libhtmle_state_t    state;
+	libhtmle_state_t    old;
 } libhtmle_t;
 
 #define HTMLEDEF extern
