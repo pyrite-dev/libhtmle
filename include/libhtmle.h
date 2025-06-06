@@ -13,30 +13,30 @@ typedef struct libhtmle_state {
 	char  tagname[129];
 } libhtmle_state_t;
 
-// Callbacks
+/* Callbacks */
 
 enum LIBHTMLE_CALLBACK_EVENT {
-	// Error
-	LIBHTMLE_ERROR_UNKNOWN, // Unknown error occurred
-	LIBHTMLE_FATAL_UNKNOWN, // Unknown fatal error occurred
-	// Parsing
+	/* Error */
+	LIBHTMLE_ERROR_UNKNOWN, /* Unknown error occurred */
+	LIBHTMLE_FATAL_UNKNOWN, /* Unknown fatal error occurred */
+	/* Parsing */
 	LIBHTMLE_PARSING_START,
 	LIBHTMLE_PARSING_FINISHED,
 	LIBHTMLE_PARSING_FAILED,
-	// Rendering
+	/* Rendering */
 	LIBHTMLE_RENDER_START,
 	LIBHTMLE_RENDER_FINISHED,
-	// Interactive content
-	LIBHTMLE_CONTENT_LINK, // param: const char* link followed
-	LIBHTMLE_CONTENT_FORM, // param: const char* form data (a=b&c=d&...)
+	/* Interactive content */
+	LIBHTMLE_CONTENT_LINK, /* param: const char* link followed */
+	LIBHTMLE_CONTENT_FORM, /* param: const char* form data (a=b&c=d&...) */
 };
 
 struct libhtmle_t;
 
 typedef struct libhtmle_callback {
 	enum LIBHTMLE_CALLBACK_EVENT event;
-	struct libhmtle_t* engine;
-	void* param;
+	libhmtle_t*		     engine;
+	void*			     param;
 } libhtmle_callback_t;
 
 typedef struct libhtmle {
